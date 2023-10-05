@@ -14,3 +14,10 @@ const Template: Story = (args) => (
 );
 
 export const Default = Template.bind({});
+
+Default.args = {
+  variant: 'secondary',
+  size: 'small',
+  isFullWidth: false,
+  disabled: false,
+};
