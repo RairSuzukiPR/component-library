@@ -3,6 +3,7 @@ import { useUniqueID } from '../utils/useUniqueID';
 import { FieldContext } from './FieldContext';
 import { Label } from './Label';
 import { Input } from './Input';
+import { Textarea } from './Textarea';
 
 interface FieldProps {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ interface FieldProps {
 interface FieldComposition {
   Label: typeof Label;
   Input: typeof Input;
+  Textarea: typeof Textarea;
 }
 export const Field: React.FC<FieldProps> & FieldComposition = ({
   children,
@@ -20,3 +22,4 @@ export const Field: React.FC<FieldProps> & FieldComposition = ({
 
 Field.Label = Label;
 Field.Input = Input;
+Field.Textarea = Textarea;
