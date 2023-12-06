@@ -22,7 +22,7 @@
     "format": "prettier --write \"src/**/*\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "storybook build -o docs",
-    "build-storybook-docs": "storybook build --docs"
+    "build-storybook-docs": "storybook build -o docs --docs"
   },
   "repository": {
     "type": "git",
