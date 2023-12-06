@@ -7,8 +7,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout
+      - uses: actions/setup-node
         with:
           node-version: '18'
       - name: Install dependencies
@@ -16,11 +16,10 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
       - name: Deploy to GitHub Pages
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           github_token: ${{ secrets.NPM_TOKEN }}
           BRANCH: main
           FOLDER: storybook-static
           CLEAN: true
           TARGET_FOLDER: docs
-
