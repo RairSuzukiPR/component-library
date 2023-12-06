@@ -10,10 +10,14 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18.18.x'
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+          node-version: '18' # ou a versão do Node.js que você precisa
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Storybook
+        run: npm run build-storybook
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          install_command: npm ci 
-          build_command: npm run build-storybook
-          path: storybook-static
-          checkout: false 
+          publish_dir: ./storybook-static
+          github_token: ${{ secrets.NPM_TOKEN }}
+
