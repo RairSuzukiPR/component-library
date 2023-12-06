@@ -21,7 +21,7 @@
     "lint:js": "eslint src/**",
     "format": "prettier --write \"src/**/*\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "storybook build -o docs",
+    "build-storybook": "storybook build",
     "build-storybook-docs": "storybook build -o docs --docs"
   },
   "repository": {
