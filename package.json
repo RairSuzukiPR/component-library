@@ -1,6 +1,6 @@
 {
   "name": "@rairsuzukipr/component-library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -21,7 +21,8 @@
     "lint:js": "eslint src/**",
     "format": "prettier --write \"src/**/*\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "storybook build -o docs",
+    "build-storybook-docs": "storybook build --docs"
   },
   "repository": {
     "type": "git",
