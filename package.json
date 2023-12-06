@@ -20,9 +20,8 @@
     "lint:format": "prettier --check \"src/**/*\"",
     "lint:js": "eslint src/**",
     "format": "prettier --write \"src/**/*\"",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "storybook build",
-    "build-storybook-docs": "storybook build -o docs --docs"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build --docs"
   },
   "repository": {
     "type": "git",
