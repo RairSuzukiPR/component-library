@@ -19,7 +19,8 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           github_token: ${{ secrets.NPM_TOKEN }}
-          BRANCH: main
-          FOLDER: storybook-static
-          CLEAN: true
-          TARGET_FOLDER: docs
+          branch: main
+          folder: storybook-static
+          clean: true
+          target_folder: docs
+          publish_dir: ./storybook-static
