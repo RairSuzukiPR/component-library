@@ -7,8 +7,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout
-      - uses: actions/setup-node
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: '18'
       - name: Install dependencies
@@ -16,7 +16,7 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
         with:
           github_token: ${{ secrets.NPM_TOKEN }}
           BRANCH: main # The branch the action should deploy to.
