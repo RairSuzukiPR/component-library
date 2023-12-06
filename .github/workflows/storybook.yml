@@ -11,28 +11,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.18.x'
-      - run: npm install
-      - run: npm run storybook build
-      - uses: actions/upload-artifact@v2
-        with:
-          name: storybook-artifact
-          path: storybook-static
-
-  publish:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: storybook-artifact
-          path: storybook-static
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18.18.x'
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
         with:
-          install_command: npm install
-          build_command: npm run storybook build
+          install_command: npm ci 
+          build_command: npm run build-storybook
           path: storybook-static
-          checkout: false
+          checkout: false 
