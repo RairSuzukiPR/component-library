@@ -7,8 +7,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout
+      - uses: actions/setup-node
         with:
           node-version: '18'
       - name: Install dependencies
@@ -16,8 +16,11 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages
         with:
-          publish_dir: ./storybook-static
           github_token: ${{ secrets.NPM_TOKEN }}
+          BRANCH: main # The branch the action should deploy to.
+          FOLDER: storybook-static # The folder that the build-storybook script generates files.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+          TARGET_FOLDER: docs # The folder that we serve our Storybook files from
 
