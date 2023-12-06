@@ -20,7 +20,7 @@ jobs:
         with:
           github_token: ${{ secrets.NPM_TOKEN }}
           BRANCH: main
-          FOLDER: ./storybook-static/
+          FOLDER: storybook-static
           CLEAN: true
           TARGET_FOLDER: docs
 
