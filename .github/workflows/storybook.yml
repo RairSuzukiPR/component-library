@@ -38,10 +38,9 @@ jobs:
           ls -al docs  # Lista os arquivos gerados em docs
 
     -   name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v2
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
-          folder: ./docs/
           force: false
-          target-folder: docs
+          publish_dir: ./docs
