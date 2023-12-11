@@ -15,12 +15,14 @@ jobs:
         run: npm install
       - name: Build Storybook
         run: npm run build-storybook
+      - name: Add .nojekyll to docs
+        run: echo "" > docs/.nojekyll
       - name: Deploy to GitHub Pages
-        uses:  actions/deploy-pages@v2
+        uses: actions/deploy-pages@v2
         with:
           github_token: ${{ secrets.NPM_TOKEN }}
           branch: main
-          folder: storybook-static
+          folder: docs
           clean: true
           target_folder: docs
-          publish_dir: ./storybook-static
+          publish_dir: ./docs
