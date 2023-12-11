@@ -21,12 +21,6 @@ jobs:
     -   name: Install dependencies
         run: npm install
 
-    -   name: Debug info
-        run: |
-          echo "Node version: $(node -v)"
-          echo "npm version: $(npm -v)"
-          ls -al  # Lista os arquivos no diretório de trabalho
-
     -   name: Build Storybook
         run: npx -p @storybook/cli sb build -o docs
 
@@ -36,12 +30,3 @@ jobs:
     -   name: Display generated files
         run: |
           ls -al docs  # Lista os arquivos gerados em docs
-
-    -   name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3.9.3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          clean: true
-          folder: ./docs
-          force: false
-          publish_dir: ./docs
