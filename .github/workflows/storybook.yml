@@ -13,10 +13,18 @@ jobs:
           node-version: '18'
       - name: Install dependencies
         run: npm ci
+      - name: Debug info
+        run: |
+          echo "Node version: $(node -v)"
+          echo "npm version: $(npm -v)"
+          ls -al  # Lista os arquivos no diretório de trabalho
       - name: Build Storybook
         run: npx -p @storybook/cli sb build -o docs
       - name: Add .nojekyll to docs
         run: echo '' > docs/.nojekyll
+      - name: Display generated files
+        run: |
+          ls -al docs  # Lista os arquivos gerados em docs
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
