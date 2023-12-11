@@ -29,7 +29,7 @@ jobs:
 
     -   name: Display generated files
         run: |
-          ls -al docs  # Lista os arquivos gerados em docs
+          ls -al .github/workflows/docs/  # Lista os arquivos gerados em docs
 
     -   name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.9.3
