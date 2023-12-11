@@ -29,14 +29,12 @@ jobs:
 
     -   name: Display generated files
         run: |
-          ls -al docs  # Lista os arquivos gerados em docs
+          ls -al docs
 
     -   name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: docs
-          # clean: true
           folder: ./docs
-          # force: false
           publish_dir: ./docs
