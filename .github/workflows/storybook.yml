@@ -16,7 +16,7 @@ jobs:
       - name: Build Storybook
         run: npx -p @storybook/cli sb build -o docs
       - name: Add .nojekyll to docs
-        run: echo "" > docs/.nojekyll
+        run: echo '' > docs/.nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
