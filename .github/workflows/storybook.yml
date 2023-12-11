@@ -40,7 +40,7 @@ jobs:
     -   name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v2
         with:
-          github_key: ${{ secrets.NPM_TOKEN }}
+          github_token: ${{ secrets.NPM_TOKEN }}
           clean: true
           folder: ./docs/
           force: false
