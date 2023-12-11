@@ -25,7 +25,7 @@ jobs:
         run: npx -p @storybook/cli sb build -o .github/workflows/docs
 
     -   name: Add .nojekyll to docs
-        run: echo '' > docs/.nojekyll
+        run: echo '' > .github/workflows/docs/.nojekyll
 
     -   name: Display generated files
         run: |
