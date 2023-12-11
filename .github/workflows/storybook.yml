@@ -16,9 +16,12 @@ jobs:
       - name: Build Storybook
         run: npx -p @storybook/cli sb build -o docs
       - name: Add .nojekyll to docs
-        run: echo '' > ./.nojekyll
+        run: echo '' > docs/.nojekyll
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           github_token: ${{ secrets.NPM_TOKEN }}
-          publish_dir: ./docs
+          clean: true
+          folder: ./docs/
+          force: false
+          target-folder: docs
