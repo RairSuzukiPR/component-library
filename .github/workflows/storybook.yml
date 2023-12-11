@@ -22,14 +22,14 @@ jobs:
         run: npm install
 
     -   name: Build Storybook
-        run: npx -p @storybook/cli sb build -o .github/workflows/docs
+        run: npx -p @storybook/cli sb build -o docs
 
     -   name: Add .nojekyll to docs
-        run: echo '' > .github/workflows/docs/.nojekyll
+        run: echo '' > docs/.nojekyll
 
     -   name: Display generated files
         run: |
-          ls -al .github/workflows/docs/  # Lista os arquivos gerados em docs
+          ls -al docs  # Lista os arquivos gerados em docs
 
     -   name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.9.3
