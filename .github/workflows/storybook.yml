@@ -18,11 +18,7 @@ jobs:
       - name: Add .nojekyll to docs
         run: echo "" > docs/.nojekyll
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.NPM_TOKEN }}
-          branch: main
-          folder: docs
-          clean: true
-          target_folder: docs
           publish_dir: ./docs
